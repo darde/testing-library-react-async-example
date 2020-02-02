@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders hello correctly 1`] = `
+<DocumentFragment>
+  <h1>
+    <ul>
+      <li>
+        image one
+      </li>
+      <li>
+        image two
+      </li>
+    </ul>
+  </h1>
+</DocumentFragment>
+`;
