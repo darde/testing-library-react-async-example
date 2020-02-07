@@ -2,15 +2,15 @@
 
 exports[`renders hello correctly 1`] = `
 <DocumentFragment>
-  <h1>
+  <div>
     <ul>
       <li>
-        image one
+        post one
       </li>
       <li>
-        image two
+        post two
       </li>
     </ul>
-  </h1>
+  </div>
 </DocumentFragment>
 `;

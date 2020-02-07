@@ -3,18 +3,13 @@ import {render, cleanup, waitForElement, act } from '@testing-library/react';
 import mockAxios from 'axios';
 import Hello from '.';
 
-it('show loading message', () => {
-  mockAxios.get.mockImplementationOnce(() => new Promise());
-  const { getByText } = render(<Hello />);
+afterEach(cleanup);
 
-  expect(getByText(/Loading/i)).toBeInTheDocument();
-});
-
-xit('renders hello correctly', async () => {
+it('renders hello correctly', async () => {
   mockAxios.get.mockResolvedValue({
     data: [
-        { id: 1, title: 'image one' },
-        { id: 2, title: 'image two' },
+        { id: 1, title: 'post one' },
+        { id: 2, title: 'post two' },
       ],
   });
 

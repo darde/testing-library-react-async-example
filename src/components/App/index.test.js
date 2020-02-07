@@ -11,8 +11,8 @@ beforeEach(() => {
   mockRepository.mockClear();
 });
 
-it('renders unsplash app correctly', () => {
-  const { asFragment } = render(<App />);
+it('renders unsplash app correctly', async () => {
+  const { asFragment } = await act(async () => { render(<App />); });
   
   expect(asFragment()).toMatchSnapshot();
 });

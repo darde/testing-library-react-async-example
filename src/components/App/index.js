@@ -5,20 +5,18 @@ import './styles.css';
 function App() {
   const [images, setImages] = useState([]);
 
-
   useEffect(() => {
     const fetchData = async () => {
       const fetchedImages = await GetPhotos();
       setImages(fetchedImages);
     };
     fetchData();
-    console.log('use effect!');
-  },[]);
+  }, []);
 
   if (images.length === 0) {
     return <span data-testid="loading">Loading...</span>
   }
-  
+
   return (
     <div className="App">
       <header className="App-header">

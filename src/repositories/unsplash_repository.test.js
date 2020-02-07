@@ -7,7 +7,7 @@ describe('Unsplash Repository', () => {
 
     beforeEach(async () => {
       mockAxios.get.mockClear();
-      images = await unsplash('dogs', 1);
+      images = await unsplash('beaches');
     });
 
     it('should call repository correctly', () => {
@@ -32,7 +32,7 @@ describe('Unsplash Repository', () => {
         "https://api.unsplash.com/search/photos",
         {"params": {
           "client_id": process.env.REACT_APP_ACCESS_KEY,
-          "query": "dogs"
+          "query": "beaches"
         }});
     });
   })

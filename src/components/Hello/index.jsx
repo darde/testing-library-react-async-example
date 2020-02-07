@@ -6,30 +6,15 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com/posts';
 export default function Hello() {
   const [posts, setPosts] = useState([]);
   
-  
   useEffect(() => {
-    let mounted = true;
-
     const fetchData = async () => {
-      const response = await axios.get(BASE_URL);
-      if (mounted) {
-        console.log(response.data);
-        setPosts(response.data);
-      }
+      const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      setPosts(response.data);
     }
+    
     fetchData();
-
-    return () => {
-      mounted = false;
-    }
   }, []);
-  console.log('length: ', posts.length);
-
-  if(posts.length === 0) {
-    console.log('returning... ');
-    return <div>Loading...</div>
-  }
-
+  
   return (
     <div>
       <ul>
@@ -42,3 +27,18 @@ export default function Hello() {
     </div>
   )
 }
+
+// export default function Hello() {
+//   const [count, setCount] = useState(0);
+
+//   useEffect(() => {
+//     document.title = count;
+//     console.log(document.title);
+//   });
+
+//   return (
+//     <div>
+//       <button onClick={() => { setCount(count + 1); }}>Click me</button>
+//     </div>
+//   );
+// }
