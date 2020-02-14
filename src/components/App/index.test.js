@@ -11,17 +11,13 @@ beforeEach(() => {
   mockRepository.mockClear();
 });
 
-it('renders unsplash app correctly', async () => {
-  const { asFragment } = await act(async () => { render(<App />); });
-  
-  expect(asFragment()).toMatchSnapshot();
-});
+describe('when the App component is not yet mounted', async () => {
+  it('renders the loading text', () => {
+    const { getByTestId } = render(<App />);
 
-// it('renders loading text', () => {
-//   const { getByTestId } = render(<App />);
-
-//   expect(getByTestId('loading')).toHaveTextContent('Loading...');
-// });
+    expect(getByTestId('loading')).toHaveTextContent('Loading...');
+  });
+})
 
 it('renders title', async () => {
   const { getByText } = render(<App />);

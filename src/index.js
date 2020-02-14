@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './components/App/';
-import Hello from './components/Hello';
+import App from './components/App/';
 
-ReactDOM.render(<Hello />, document.getElementById('root'));
+ReactDOM.render(<App term={'dogs'} />, document.getElementById('root'));
