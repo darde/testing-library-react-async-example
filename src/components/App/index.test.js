@@ -11,7 +11,7 @@ beforeEach(() => {
   mockRepository.mockClear();
 });
 
-describe('when the App component is not yet mounted', async () => {
+describe('when the App component is not yet mounted', () => {
   it('renders the loading text', () => {
     const { getByTestId } = render(<App />);
 
